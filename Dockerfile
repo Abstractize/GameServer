@@ -1,10 +1,9 @@
 FROM golang:1.14
 
-RUN mkdir /app
-ADD . /app
 WORKDIR /app
+COPY ./src/ .
 
 RUN go build -o main .
 
-EXPOSE 8080
-CMD ["/app/main"]
+EXPOSE 5500
+CMD ["./main"]
